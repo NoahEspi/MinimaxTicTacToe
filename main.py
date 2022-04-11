@@ -5,7 +5,7 @@ import os
 import time
 
 class TicTacToe:
-
+  
   def __init__(self, x, o):
     self.board = [[0,0,0],[0,0,0],[0,0,0]] 
     self.gameOver = False # initializes board as 0, 1, or -1
@@ -15,7 +15,9 @@ class TicTacToe:
     elif x == -1:
       while True:
         try:
-          depth = int(input("Depth of X cpu >> "))
+          depth = int(input("Depth of X cpu (can't be greater than 6) >> "))
+          if depth > 6:
+            depth = 6
           break
         except:
           print("\nInvalid depth\n")
@@ -28,7 +30,9 @@ class TicTacToe:
     elif o == -1:
       while True:
         try:
-          depth = int(input("Depth of O cpu >> "))
+          depth = int(input("Depth of O cpu (can't be greater than 6) >> "))
+          if depth > 6:
+            depth = 6
           break
         except:
           print("\nInvalid depth\n")
